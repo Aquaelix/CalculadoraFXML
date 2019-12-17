@@ -12,88 +12,87 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
-
 public class Controller implements Initializable {
 
-	//model
-	
+	// model
+
 	private Calculadora calc = new Calculadora();
-	
+
 	// View
-	
-		@FXML
-	    private GridPane view;
 
-	    @FXML
-	    private TextField numerosText;
+	@FXML
+	private GridPane view;
 
-	    @FXML
-	    private Button ceroButton;
-	    
-	    @FXML
-	    private Button unoButton;
+	@FXML
+	private TextField numerosText;
 
-	    @FXML
-	    private Button dosButton;
-	    
-	    @FXML
-	    private Button tresButton;
-	    
-	    @FXML
-	    private Button cuatroButton;
-	    
-	    @FXML
-	    private Button cincoButton;
-	    
-	    @FXML
-	    private Button seisButton;
-	    
-	    @FXML
-	    private Button sieteButton;
-	    
-	    @FXML
-	    private Button ochoButton;
-	    
-	    @FXML
-	    private Button nueveButton;
-	    
-	    @FXML
-	    private Button sumaButton;
-	    
-	    @FXML
-	    private Button restaButton;
-	    
-	    @FXML
-	    private Button multiplicarButton;
-	    
-	    @FXML
-	    private Button dividirButton;
-	    
-	    @FXML
-	    private Button puntoButton;
-	    
-	    @FXML
-	    private Button igualButton;
-	    
-	    @FXML
-	    private Button borrarButton;
-	
-	    @FXML
-	    private Button borrarTodoButton;
-	    
+	@FXML
+	private Button ceroButton;
+
+	@FXML
+	private Button unoButton;
+
+	@FXML
+	private Button dosButton;
+
+	@FXML
+	private Button tresButton;
+
+	@FXML
+	private Button cuatroButton;
+
+	@FXML
+	private Button cincoButton;
+
+	@FXML
+	private Button seisButton;
+
+	@FXML
+	private Button sieteButton;
+
+	@FXML
+	private Button ochoButton;
+
+	@FXML
+	private Button nueveButton;
+
+	@FXML
+	private Button sumaButton;
+
+	@FXML
+	private Button restaButton;
+
+	@FXML
+	private Button multiplicarButton;
+
+	@FXML
+	private Button dividirButton;
+
+	@FXML
+	private Button puntoButton;
+
+	@FXML
+	private Button igualButton;
+
+	@FXML
+	private Button borrarButton;
+
+	@FXML
+	private Button borrarTodoButton;
+
 	public Controller() throws IOException {
-		
+
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/CalculadoraView.fxml"));
 		loader.setController(this);
 		loader.load();
-	
+
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		numerosText.textProperty().bind(calc.pantallaProperty());
 	}
-	
+
 	@FXML
 	private void onPuntoAction(ActionEvent event) {
 		calc.insertarComa();
@@ -206,6 +205,4 @@ public class Controller implements Initializable {
 		return view;
 	}
 
-	
-	
 }
